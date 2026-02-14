@@ -1,43 +1,78 @@
-/* Background */
-.about-container {
+/* ============================= */
+/* GLOBAL RESET */
+/* ============================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ============================= */
+/* REHEEN PROFESSIONAL BACKGROUND */
+/* ============================= */
+
+.about-section {
   min-height: 100vh;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #e0f2fe, #ffffff);
+  padding: 90px 20px;
+  background: linear-gradient(
+    120deg,
+    #1f2937,
+    /* Dark Steel */ #0f4c81,
+    /* Corporate Blue */ #111827 /* Deep Charcoal */
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================= */
+/* CONTAINER */
+/* ============================= */
+
+.about-container {
   max-width: 1200px;
-  margin: auto;
+  width: 100%;
 }
 
-/* Title Animation */
+/* ============================= */
+/* TITLE */
+/* ============================= */
+
 .about-title {
-  font-size: 2.5rem;
-  font-weight: 700;
   text-align: center;
-  color: #1e3a8a;
-  margin-bottom: 50px;
-  animation: fadeDown 1s ease-in-out;
+  font-size: 44px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 70px;
+  letter-spacing: 1px;
+  animation: fadeDown 1s ease forwards;
 }
 
-/* Grid */
+/* ============================= */
+/* GRID LAYOUT */
+/* ============================= */
+
 .about-grid {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
 }
 
-@media (min-width: 768px) {
-  .about-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+/* ============================= */
+/* CARD DESIGN */
+/* ============================= */
 
-/* Cards */
 .about-card {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  padding: 45px;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  border-top: 6px solid #16a34a; /* Green Service Accent */
   transition: all 0.4s ease;
-  transform: translateY(0);
   opacity: 0;
+  transform: translateY(40px);
   animation: fadeUp 1s ease forwards;
 }
 
@@ -45,26 +80,32 @@
   animation-delay: 0.3s;
 }
 
-/* Hover Effect */
 .about-card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(30, 58, 138, 0.2);
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
 }
 
-/* Card Title */
+/* ============================= */
+/* CARD CONTENT */
+/* ============================= */
+
 .about-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #2563eb;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f4c81;
+  margin-bottom: 18px;
 }
 
-/* Card Text */
 .about-card p {
-  line-height: 1.7;
+  font-size: 18px;
   color: #374151;
+  line-height: 1.8;
 }
 
-/* Animations */
+/* ============================= */
+/* ANIMATIONS */
+/* ============================= */
+
 @keyframes fadeDown {
   from {
     opacity: 0;
@@ -77,12 +118,35 @@
 }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ============================= */
+/* MOBILE RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .about-card {
+    padding: 30px;
+  }
+
+  .about-card h3 {
+    font-size: 22px;
+  }
+
+  .about-card p {
+    font-size: 16px;
   }
 }
