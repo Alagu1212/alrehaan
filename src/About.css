@@ -1,111 +1,155 @@
-/* ============================= */
-/* GLOBAL RESET */
-/* ============================= */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* ============================= */
-/* REHEEN PROFESSIONAL BACKGROUND */
-/* ============================= */
-
+/* ====== Animated Silver / Light Grey Background ====== */
 .about-section {
   min-height: 100vh;
-  padding: 90px 20px;
-  background: linear-gradient(
-    120deg,
-    #1f2937,
-    /* Dark Steel */ #0f4c81,
-    /* Corporate Blue */ #111827 /* Deep Charcoal */
-  );
+  padding: 100px 20px;
+  background: linear-gradient(-45deg, #f8fafc, #e5e7eb, #d1d5db, #f3f4f6);
+  background-size: 400% 400%;
+  animation: gradientBG 18s ease infinite;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
-/* ============================= */
-/* CONTAINER */
-/* ============================= */
+/* Soft Light Overlay */
+.about-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+}
 
+/* Gradient Animation */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ====== Container ====== */
 .about-container {
-  max-width: 1200px;
   width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
-/* ============================= */
-/* TITLE */
-/* ============================= */
-
+/* ====== Title ====== */
 .about-title {
-  text-align: center;
-  font-size: 44px;
-  font-weight: 800;
-  color: #ffffff;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #1f2937;
   margin-bottom: 70px;
   letter-spacing: 1px;
-  animation: fadeDown 1s ease forwards;
+  animation: fadeDown 1s ease-in-out;
+  position: relative;
 }
 
-/* ============================= */
-/* GRID LAYOUT */
-/* ============================= */
+.about-title::after {
+  content: "";
+  width: 90px;
+  height: 4px;
+  background: #2563eb;
+  display: block;
+  margin: 18px auto 0;
+  border-radius: 10px;
+  animation: underlineGlow 2s infinite alternate;
+}
 
+/* Underline Glow Animation */
+@keyframes underlineGlow {
+  from {
+    opacity: 0.6;
+    width: 70px;
+  }
+  to {
+    opacity: 1;
+    width: 110px;
+  }
+}
+
+/* ====== Grid ====== */
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 40px;
 }
 
-/* ============================= */
-/* CARD DESIGN */
-/* ============================= */
-
+/* ====== Cards ====== */
 .about-card {
   background: #ffffff;
-  padding: 45px;
-  border-radius: 18px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-  border-top: 6px solid #16a34a; /* Green Service Accent */
-  transition: all 0.4s ease;
+  padding: 50px 40px;
+  border-radius: 25px;
+  text-align: center;
+  transition: all 0.5s ease;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Soft Blue Glow */
+.about-card::before {
+  content: "";
+  position: absolute;
+  width: 140%;
+  height: 140%;
+  background: linear-gradient(45deg, #2563eb, #60a5fa);
+  top: -20%;
+  left: -20%;
+  z-index: -1;
+  filter: blur(35px);
   opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp 1s ease forwards;
+  transition: opacity 0.4s ease;
 }
 
-.about-card:nth-child(2) {
-  animation-delay: 0.3s;
+.about-card:hover::before {
+  opacity: 0.25;
 }
 
+/* Hover Effect */
 .about-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.25);
 }
 
-/* ============================= */
-/* CARD CONTENT */
-/* ============================= */
-
+/* ====== Card Title ====== */
 .about-card h3 {
-  font-size: 28px;
+  font-size: 1.8rem;
   font-weight: 700;
-  color: #0f4c81;
-  margin-bottom: 18px;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
 }
 
+.about-card:hover h3 {
+  color: #2563eb;
+  letter-spacing: 1px;
+}
+
+/* ====== Card Text ====== */
 .about-card p {
-  font-size: 18px;
-  color: #374151;
+  font-size: 1.15rem;
   line-height: 1.8;
+  color: #4b5563;
+  transition: transform 0.3s ease;
 }
 
-/* ============================= */
-/* ANIMATIONS */
-/* ============================= */
+.about-card:hover p {
+  transform: translateY(-5px);
+}
 
+/* ====== Animations ====== */
 @keyframes fadeDown {
   from {
     opacity: 0;
@@ -117,36 +161,33 @@
   }
 }
 
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
-/* ============================= */
-/* MOBILE RESPONSIVE */
-/* ============================= */
-
-@media (max-width: 992px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
   .about-title {
-    font-size: 32px;
-    margin-bottom: 40px;
+    font-size: 2.3rem;
   }
 
   .about-card {
-    padding: 30px;
+    padding: 35px 25px;
   }
 
   .about-card h3 {
-    font-size: 22px;
+    font-size: 1.5rem;
   }
 
   .about-card p {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }

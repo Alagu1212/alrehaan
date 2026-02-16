@@ -1,13 +1,32 @@
-export default function Clients() {
-  return (
-    <div className="min-h-screen px-6 py-20 bg-white text-center">
-      <h2 className="text-4xl font-bold text-blue-800 mb-10">
-        Our Prestigious Clients
-      </h2>
+import { motion } from "framer-motion";
+import "./Clients.css";
 
-      <p className="text-lg text-gray-600">
-        Living Legends • Warsan Village • Supermarket • Commercial Projects
-      </p>
+export default function Clients() {
+  const clients = [
+    "Living Legends",
+    "Warsan Village",
+    "Supermarket",
+    "Commercial Projects",
+  ];
+
+  return (
+    <div className="clients-container">
+      <h2 className="clients-title">Our Prestigious Clients</h2>
+
+      <div className="clients-grid">
+        {clients.map((client, index) => (
+          <motion.div
+            key={index}
+            className="client-card"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.2 }}
+            whileHover={{ scale: 1.05 }}
+          >
+            {client}
+          </motion.div>
+        ))}
+      </div>
     </div>
   );
 }

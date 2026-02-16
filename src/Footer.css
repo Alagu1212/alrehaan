@@ -1,0 +1,93 @@
+/* ===== Footer Container (White Animated Theme) ===== */
+.footer-container {
+  background: linear-gradient(-45deg, #ffffff, #f8fafc, #eef2f7, #ffffff);
+  border-top: 1px solid #c8a24d;
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  padding: 60px 20px 30px;
+  text-align: center;
+  color: #1e293b; /* Dark slate text */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===== Footer Content ===== */
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===== Title ===== */
+.footer-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  position: relative;
+  letter-spacing: 1px;
+  color: #0f172a; /* Strong dark heading */
+}
+
+.footer-title::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background: #2563eb; /* Blue underline */
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 10px;
+}
+
+/* ===== Info Section ===== */
+.footer-info p {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+  cursor: pointer;
+  color: #334155; /* Soft dark gray */
+}
+
+.footer-info span {
+  font-weight: 600;
+  color: #2563eb; /* Blue label highlight */
+}
+
+/* Hover Slide Effect */
+.footer-info p:hover {
+  transform: translateX(6px);
+  color: #1d4ed8; /* Darker blue hover */
+}
+
+/* ===== Bottom Copyright ===== */
+.footer-bottom {
+  margin-top: 30px;
+  font-size: 0.9rem;
+  color: #64748b;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .footer-title {
+    font-size: 1.8rem;
+  }
+
+  .footer-info p {
+    font-size: 1rem;
+  }
+}

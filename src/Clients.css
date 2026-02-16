@@ -1,0 +1,132 @@
+/* ====== Animated Light Background (About Theme) ====== */
+.clients-container {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: linear-gradient(-45deg, #ffffff, #f1f5f9, #e0f2fe, #f8fafc);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Gradient Animation */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ====== Title ====== */
+.clients-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1e3a8a; /* Dark Blue */
+  margin-bottom: 60px;
+  text-align: center;
+  animation: fadeDown 1s ease-in-out;
+}
+
+.clients-title::after {
+  content: "";
+  width: 90px;
+  height: 4px;
+  background: #2563eb; /* Accent Blue */
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 10px;
+}
+
+/* ====== Grid Layout ====== */
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* ====== Client Card ====== */
+.client-card {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.08);
+  position: relative;
+  overflow: hidden;
+  animation: float 4s ease-in-out infinite;
+  border: 1px solid #e2e8f0;
+}
+
+/* Soft Glow Effect */
+.client-card::before {
+  content: "";
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  background: linear-gradient(45deg, #e0f2fe, #bae6fd, #dbeafe);
+  top: -15%;
+  left: -15%;
+  z-index: -1;
+  filter: blur(30px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.client-card:hover::before {
+  opacity: 0.6;
+}
+
+.client-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.18);
+  color: #2563eb;
+}
+
+/* ====== Animations ====== */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .clients-title {
+    font-size: 2.2rem;
+  }
+
+  .client-card {
+    font-size: 1rem;
+    padding: 25px 15px;
+  }
+}

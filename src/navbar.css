@@ -9,12 +9,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 8%;
-  background-color: #000;
+  background-color: #ffffff;
   border-bottom: 1px solid #c8a24d;
 }
 
 .logo img {
   height: 60px;
+  border-radius: 10px;
 }
 
 .nav-links {
@@ -45,7 +46,7 @@
 }
 
 .nav-links li a:hover {
-  color: #ffffff;
+  color: #000;
 }
 
 .nav-links li a:hover::after {
