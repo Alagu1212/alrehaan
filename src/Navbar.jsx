@@ -5,7 +5,7 @@ import logo from "./assets/logo.jpg";
 
 const Navbar = () => {
   return (
-    <nav className="navbar fixed">
+    <nav className="navbar">
       <div className="logo">
         <img src={logo} alt="Rehaan Logo" />
       </div>
@@ -15,16 +15,17 @@ const Navbar = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/About">About</Link>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/Services">Services</Link>
+          <Link to="/services">Services</Link>
+        </li>
+
+        <li>
+          <Link to="/clients">Clients</Link>
         </li>
         <li>
-          <Link to="/Clients">Client</Link>
-        </li>
-        <li>
-          <Link to="/Contact">Contact</Link>
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
     </nav>
