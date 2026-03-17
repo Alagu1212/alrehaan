@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import About from "./About";
 import Services from "./Services";
-
+import Design from "./Design";
 import Clients from "./Clients";
 import Contact from "./Contact";
 import Footer from "./Footer";
@@ -21,7 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-
+            <Route path="/design" element={<Design />} />
             <Route path="/clients" element={<Clients />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

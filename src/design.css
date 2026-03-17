@@ -1,0 +1,203 @@
+/* ===== Background Animation ===== */
+
+.design-container{
+  min-height:100vh;
+  padding:80px 20px;
+  background:linear-gradient(-45deg,#ffffff,#f1f5f9,#e0f2fe,#f8fafc);
+  background-size:400% 400%;
+  animation:gradientBG 15s ease infinite;
+  text-align:center;
+}
+
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* ===== Title ===== */
+
+.design-title{
+  font-size:3rem;
+  color:#1e3a8a;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.design-subtitle{
+  max-width:700px;
+  margin:auto;
+  margin-bottom:60px;
+  font-size:1.1rem;
+  color:#475569;
+  line-height:1.6;
+}
+
+/* ===== Grid Layout ===== */
+
+.design-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* ===== Card ===== */
+
+.design-card{
+  background:#ffffff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(37,99,235,0.1);
+  transition:all .4s ease;
+  padding-bottom:20px;
+  cursor:pointer;
+  border:1px solid #e2e8f0;
+}
+
+.design-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.design-card h3{
+  color:#1e3a8a;
+  margin-top:20px;
+  font-size:1.4rem;
+  font-weight:600;
+}
+
+.design-card p{
+  padding:10px 20px;
+  font-size:0.95rem;
+  color:#555;
+  line-height:1.5;
+}
+
+/* ===== Hover Animation ===== */
+
+.design-card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 20px 50px rgba(37,99,235,0.18);
+}
+
+/* ===== Floating Animation ===== */
+
+.design-card{
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-6px);}
+  100%{transform:translateY(0px);}
+}
+
+
+/* ============================= */
+/* ===== TABLET RESPONSIVE ===== */
+/* ============================= */
+
+@media (max-width:1024px){
+
+  .design-container{
+    padding:60px 20px;
+  }
+
+  .design-title{
+    font-size:2.5rem;
+  }
+
+  .design-subtitle{
+    font-size:1rem;
+  }
+
+  .design-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+  }
+
+  .design-card img{
+    height:180px;
+  }
+
+}
+
+
+/* ============================= */
+/* ===== MOBILE RESPONSIVE ===== */
+/* ============================= */
+
+@media (max-width:768px){
+
+  .design-container{
+    padding:50px 15px;
+  }
+
+  .design-title{
+    font-size:2rem;
+  }
+
+  .design-subtitle{
+    font-size:0.95rem;
+    margin-bottom:40px;
+  }
+
+  .design-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .design-card img{
+    height:170px;
+  }
+
+  .design-card h3{
+    font-size:1.2rem;
+  }
+
+  .design-card p{
+    font-size:0.9rem;
+  }
+
+}
+
+
+/* ============================= */
+/* ===== SMALL PHONES ===== */
+/* ============================= */
+
+@media (max-width:480px){
+
+  .design-container{
+    padding:40px 12px;
+  }
+
+  .design-title{
+    font-size:1.6rem;
+  }
+
+  .design-subtitle{
+    font-size:0.85rem;
+  }
+
+  .design-card{
+    border-radius:16px;
+  }
+
+  .design-card img{
+    height:150px;
+  }
+
+  .design-card h3{
+    font-size:1.1rem;
+  }
+
+  .design-card p{
+    font-size:0.85rem;
+    padding:10px 15px;
+  }
+
+}
